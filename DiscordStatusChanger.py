@@ -40,6 +40,7 @@ if not token:
 
 token = configuration.get('DiscordAuthorization') # Update it.
 delay = configuration.get('DiscordStatusChangeDelay')
+status = configuration.get('DiscordStatus')
 
 if not words:
     print(f'{colorama.Fore.RED}Add words in words.txt (separate with indent.){colorama.Fore.RESET}')
@@ -50,7 +51,7 @@ words = cycle(words)
 for word in words:
     response = requests.patch(
         'https://canary.discord.com/api/v9/users/@me/settings',
-        json={'custom_status': {'text': word}},
+        json={'custom_status': {'text': word}, 'status': status},
         headers={'Content-Type': 'application/json', 'Authorization': token}
     )
 
