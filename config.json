@@ -1,4 +1,5 @@
 {
     "DiscordAuthorization": null, 
-    "DiscordStatusChangeDelay": 3
+    "DiscordStatusChangeDelay": 3,
+    "DiscordStatus": "online"
 }
